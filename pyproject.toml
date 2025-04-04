@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "medical-img-proc"
+version = "0.1.0"
+description = "Medical image reconstruction codebase for digital tomosynthesis"
+authors = ["rvarga <robertvarga87@gmail.com>"]
+readme = "README.md"
+packages = [{include = "medical_img_proc"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^2.2.4"
+matplotlib = "^3.10.1"
+seaborn = "^0.13.2"
+opencv-python = "^4.11.0.86"
+pycuda = "^2025.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
