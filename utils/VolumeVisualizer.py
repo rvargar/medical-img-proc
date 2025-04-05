@@ -26,10 +26,10 @@ class VolumeVisualizer:
     def save_slices_as_png(volume: np.array, output_dir: str, indices=None, cmap: str='gray'):
         """
         Save slices as PNG images. Optionally select specific indices.
-        :param volume:
-        :param output_dir:
-        :param indices:
-        :param cmap:
+        :param volume: image volume
+        :param output_dir: directory where to save png files
+        :param indices: list of the specific indicies over Z-axis
+        :param cmap: colormap name
         :return:
         """
         os.makedirs(output_dir, exist_ok=True)
