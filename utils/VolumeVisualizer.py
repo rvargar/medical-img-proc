@@ -20,6 +20,8 @@ class VolumeVisualizer:
             plt.title(f"Slice {i + 1}/{num_slices}")
             plt.axis("off")
             plt.pause(0.1)
+            if i % 20 == 19:
+                plt.clf()
         plt.close()
 
     @staticmethod
