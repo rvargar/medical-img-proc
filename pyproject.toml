@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "medical_img_proc"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.14"
 numpy = "^2.2.4"
 matplotlib = "^3.10.1"
 seaborn = "^0.13.2"
@@ -16,6 +16,8 @@ pycuda = "^2025.1"
 pydicom = "^3.0.1"
 loguru = "^0.7.3"
 imageio = "^2.37.0"
+
+
 
 
 [build-system]

@@ -2,7 +2,19 @@
 
 WIP - plans and ToDos:
  - Cone beam simulator
- - Image classification for malignant cases
+ - TBD
+## Install dependencies
+1. As a prequisite, you need to install Cuda Driver with Toolkit libraries. Then you need to add Cuda libraries to the path.
+```bash
+ export PATH=/usr/local/cuda/bin:$PATH
+ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+ ```
+
+2. To install dependencies, you can use pip or uv environment manager. To install dependencies using pip, run the following command:
+```bash
+uv pip install -r requirements.txt
+```
+
 # Downloading sample data (e.g.: Lung HR-CT)
 1. Downloading sample <b>Chest HR CT</b> data e.g. from the following source from cancer imaging archive:
 https://www.cancerimagingarchive.net/collection/lung-pet-ct-dx/ [1] <br>
