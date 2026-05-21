@@ -7,10 +7,11 @@ import imageio
 class VolumeVisualizer:
 
     @staticmethod
-    def show_slices(volume: np.array ,cmap: str='gray'):
+    def show_slices(volume: np.array, pause_t: float=0.1, cmap: str='gray'):
         """
         Show the volume slice-by-slice using matplotlib
         :param volume: image volume
+        :param pause_t: pause time between slices
         :param cmap: colormap name
         :return:
         """
@@ -19,7 +20,7 @@ class VolumeVisualizer:
             plt.imshow(volume[:, :, i], cmap=cmap)
             plt.title(f"Slice {i + 1}/{num_slices}")
             plt.axis("off")
-            plt.pause(0.1)
+            plt.pause(pause_t)
             if i % 20 == 19:
                 plt.clf()
         plt.close()
