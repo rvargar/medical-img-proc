@@ -2,7 +2,32 @@
 
 WIP - plans and ToDos:
  - Cone beam simulator
- - TBD
+## Project Structure
+```
+.
+├── cuda-files 
+│   ├── backprojection.cu
+│   └── projection.cu
+├── examples
+│   └── x_ray_simulator_example.py
+├── misc
+│   ├── filt_projections.gif
+│   ├── projections.gif
+│   └── reconstruction.gif
+├── poetry.lock
+├── pyproject.toml
+├── README.md
+├── utils
+│   ├── CudaWrapper.py
+│   ├── DicomCTParser.py
+│   ├── __init__.py
+│   ├── Logger.py
+│   ├── TomoFilter.py
+│   └── VolumeVisualizer.py
+├── uv.lock
+└── uv.toml
+```
+
 ## Install dependencies
 1. As a prequisite, you need to install Cuda Driver with Toolkit libraries. Then you need to add Cuda libraries to the path.
 ```bash
@@ -52,10 +77,16 @@ The main Python interfaces are:
 ## Example Usage
 See `examples/x_ray_simulator_example.py` for a full pipeline:
 1. Load and preprocess a CT volume
-2. Simulate X-ray projections using `Projector`
-3. (Optionally) Filter the projections (e.g., with a Hamming filter)
+2. Simulate X-ray projections using `Projector` 
+![image](/misc/projections.gif)
+3. (Optionally) Filter the projections (e.g., with an 1D Hamming filter)
+![image](/misc/filt_projections.gif)
 4. Reconstruct the volume using `Backprojector`
-5. Visualize the result
+![image](/misc/reconstruction.gif)
+
+### NotesPhysical Extents:
+Adjust oxb, oyb, and ozb based on your actual DICOM metadata (e.g., PixelSpacing and SliceThickness).
+The values above are placeholders and may need tuning. In the example of x_ray_simulator_example.py, the slice reconstruction can be done with 'axial', 'coronal' and sagittal' views. It defines the appropriate transpose order, physical extents, source/detector geometry.
 
 ## Applications
 - Simulating X-ray/CT acquisition for algorithm development

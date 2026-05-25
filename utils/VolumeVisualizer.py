@@ -78,8 +78,10 @@ class VolumeVisualizer:
             fig.canvas.draw()
 
             # Convert canvas to image array
-            img = np.frombuffer(fig.canvas.tostring_rgb(), dtype='uint8')
-            img = img.reshape(fig.canvas.get_width_height()[::-1] + (3,))
+            img = np.frombuffer(fig.canvas.tostring_argb(), dtype='uint8')
+            img = img.reshape(fig.canvas.get_width_height()[::-1] + (4,))
+            # Convert ARGB to RGB
+            img = img[:, :, [1, 2, 3]]
             images.append(img)
             plt.close(fig)
 
