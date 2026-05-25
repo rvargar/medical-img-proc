@@ -84,7 +84,9 @@ See `examples/x_ray_simulator_example.py` for a full pipeline:
 4. Reconstruct the volume using `Backprojector`
 ![image](/misc/reconstruction.gif)
 
-### NotesPhysical Extents:
+### Notes
+Physical Extents:
+
 Adjust oxb, oyb, and ozb based on your actual DICOM metadata (e.g., PixelSpacing and SliceThickness).
 The values above are placeholders and may need tuning. In the example of x_ray_simulator_example.py, the slice reconstruction can be done with 'axial', 'coronal' and sagittal' views. It defines the appropriate transpose order, physical extents, source/detector geometry.
 
