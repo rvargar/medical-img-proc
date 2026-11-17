@@ -1,0 +1,6 @@
+{
+  "mode": "compare",
+  "n_iter": 20,
+  "add_clutter": true,
+  "projector_study": true
+}

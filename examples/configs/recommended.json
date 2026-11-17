@@ -1,0 +1,26 @@
+{
+  "mode": "recommended",
+  "input_path": "./data/Lung-Pet-CT-Dx/Lung_Dx-A0018/07-24-2008-lungc-69037/301.000000-1.25mm-74521/1",
+  "out_dir": "./results/mlem",
+  "plane": "coronal",
+  "num_projections": 20,
+  "detector_px": 1512,
+  "bin": 2,
+  "recon_vz": 40,
+  "n_iter": 20,
+  "add_clutter": true,
+  "edge_handling": {
+    "border_px": 2,
+    "auto_detect": true,
+    "outlier_k": 8.0,
+    "sens_threshold": 0.02,
+    "coverage_min": 0.02
+  },
+  "extrapolation": {"enabled": true, "pad_px": 160, "shape": "sqrt", "w_ext": 0.3},
+  "reconstruction": {
+    "variant": "os-lalm",
+    "backprojector": "voxel",
+    "n_subsets": 10,
+    "lalm": {"prior": "hyperbola", "beta": 1.0, "delta": 0.2}
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "mode": "recommended",
+  "reconstruction": {
+    "variant": "os-lalm",
+    "backprojector": "voxel",
+    "n_subsets": 2,
+    "lalm": {"prior": "tv", "tv_lambda": 0.01, "tv_wz": 1.0, "tv_inner": 50}
+  }
+}
